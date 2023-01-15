@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
+import math
+
 import numpy as np
 import matplotlib.pyplot as plt
-import math
+
 
 class Adaline():
     def __init__(self, iterations=15, learning_rate=0.001):
