@@ -108,9 +108,9 @@ def accuracy_score(y_pred, y_test):
             acc_counter += 1
     return 1 / (y_pred.shape[0]) * acc_counter
 
-dataset = create_input(n = 50, noise = 5)
+sample_dataset = create_input(n = 50, noise = 5)
 
-train_x, train_y, test_x, test_y = train_test_split(dataset, 0.7)
+train_x, train_y, test_x, test_y = train_test_split(sample_dataset, 0.7)
 
 model = Adaline(iterations = 15, learning_rate = 0.001)
 
