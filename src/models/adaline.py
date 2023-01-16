@@ -13,7 +13,7 @@ class Adaline():
 
     def fit(self, X, y):
         self.weights = np.zeros(1 + X.shape[1])
-        self.cost_list = []
+        self.loss_list = []
 
         for _ in range(self.iterations):
             predicted_value = self.linear_activation(X)
@@ -23,8 +23,8 @@ class Adaline():
             self.weights[1:] += self.learning_rate * np.dot(X.T, errors)
             self.weights[0] += self.learning_rate * errors.sum()
 
-            cost = (errors ** 2).sum() / 2
-            self.cost_list.append(cost)
+            loss = (errors ** 2).sum() / 2
+            self.loss_list.append(loss)
 
         return self
 
@@ -42,7 +42,7 @@ model = Adaline(iterations = 15, learning_rate = 0.001)
 
 model.fit(train_x, train_y)
 
-plt.plot(range(1, len(model.cost_list) + 1), model.cost_list, marker = 'o', color = 'blue')
+plt.plot(range(1, len(model.loss_list) + 1), model.loss_list, marker = 'o', color = 'blue')
 plt.xlabel('Epoch')
 plt.ylabel('Mean Squared Error')
 plt.show()
