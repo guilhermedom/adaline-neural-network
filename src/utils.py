@@ -17,9 +17,9 @@ def create_input(n, noise):
              [-1, -1, 1, -1, -1]]
         #Y_mat = np.array(Y).reshape(-1, 5)
 
-        for _ in range(0, noise):
-            pos_x = np.random.randint(0, 5)
-            pos_y = np.random.randint(0, 5)
+        for _ in range(noise):
+            pos_x = np.random.randint(low=5, size=None)
+            pos_y = np.random.randint(low=5, size=None)
             y[pos_x][pos_y] = -1
 
         dataset_matrix.append(y)
@@ -35,9 +35,9 @@ def create_input(n, noise):
                  [-1, 1, -1, 1, -1],
                  [1, -1, -1, -1, 1]]
 
-        for _ in range(0, noise):
-            pos_x = np.random.randint(0, 5)
-            pos_y = np.random.randint(0, 5)
+        for _ in range(noise):
+            pos_x = np.random.randint(low=5, size=None)
+            pos_y = np.random.randint(low=5, size=None)
             y_inv[pos_x][pos_y] = -1
 
         dataset_matrix.append(y)
