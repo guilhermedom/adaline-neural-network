@@ -7,7 +7,7 @@ from ..utils import create_input, accuracy_score, train_test_split
 
 
 class Adaline():
-    def __init__(self, iterations=15, learning_rate=0.001):
+    def __init__(self, iterations=1000, learning_rate=0.001):
         self.learning_rate = learning_rate
         self.iterations = iterations
 
