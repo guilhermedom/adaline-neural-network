@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-import matplotlib.pyplot as plt
-
-from ..utils import create_input, accuracy_score, train_test_split
 
 
 class Adaline():
@@ -33,18 +30,3 @@ class Adaline():
 
     def predict(self, X):
         return np.where(self.linear_activation(X) >= 0.0, 1, -1)
-
-sample_dataset = create_input(n = 50, noise = 5)
-
-train_x, train_y, test_x, test_y = train_test_split(sample_dataset, 0.7)
-
-model = Adaline(iterations = 15, learning_rate = 0.001)
-
-model.fit(train_x, train_y)
-
-plt.plot(range(1, len(model.loss_list) + 1), model.loss_list, marker = 'o', color = 'blue')
-plt.xlabel('Epoch')
-plt.ylabel('Mean Squared Error')
-plt.show()
-
-print(accuracy_score(model.predict(test_x), test_y))
