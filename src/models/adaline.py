@@ -7,10 +7,11 @@ class Adaline():
     def __init__(self, iterations=1000, learning_rate=0.001):
         self.learning_rate = learning_rate
         self.iterations = iterations
+        self.weights = []
+        self.loss_list = []
 
     def fit(self, X, y):
         self.weights = np.zeros(1 + X.shape[1])
-        self.loss_list = []
 
         for _ in range(self.iterations):
             predicted_value = self.linear_activation(X)
